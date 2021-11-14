@@ -1,0 +1,142 @@
+--help
+Shows this page.
+
+--quiet
+Runs the setup program without showing the user interface (the unattended installation).
+
+--log-dir=<path>
+Path to a folder where the installation logs will be saved.
+
+--language=<code>
+Language that the product and its components will use.
+
+     en  - English
+     bg  - Български
+     cs  - Čeština
+     da  - Dansk
+     de  - Deutsch
+     es  - Espańol
+     fr  - Français
+     ko  - 한국어
+     id  - Bahasa Indonesia
+     it  - Italiano
+     hu  - Magyar
+     ms  - Bahasa Melayu
+     nl  - Dutch
+     ja  - 日本語
+     nb  - Norsk
+     pl  - Polski
+     pt  - Portuguęs
+     pt_BR  - Portuguęs brasileiro
+     ru  - Русский
+     fi  - Suomi
+     sr  - Српски
+     sv  - Svenska
+     tr  - Türkçe
+     zh  - 简体中文
+     zh_TW  - 繁體中文
+
+--register-only
+Skips the installation and shows the registration page only (the OAuth 2.0 registration). Do not use with '--quiet'.
+
+--anti-tamper-password=<password>
+Anti-tamper password. It might be required to modify some of the installed components.
+
+Installation files
+--installation-files=<path/url>
+URL or file-system path to the installation files.
+
+--skip-https-cert-verification
+Skip server certificate verification when downloading the installation files.
+
+--skip-file-trust-verification
+Skip trust verification of the downloaded installation files.
+
+--attempts-number=<number>
+Number of attempts to download an installation file. The default value is '1'.
+
+--cache-directory=<path>
+Path to a local folder where the installation files will be cached before installation.
+
+Components
+--add-components=<component1,component2,...,componentN>
+Components and groups of components to be added to the product being installed.
+If this parameter is not specified, the product will be installed with the default set of components, based on the setup program purpose. If the product is already installed, it will be repaired or updated based on the setup program version.
+If this parameter is specified, the product will be installed with the components and groups of components listed in the value (you can combine components and groups in a value). Specified components that are already installed will be repaired or updated, based on the setup program version.
+
+Supported component values:
+      agentForAd - Agent for Active Directory
+      agentForAmp - Agent for Antimalware protection and URL filtering
+      agentForDlp - Agent for Data Loss Prevention
+      agentForExchange - Agent for Exchange
+      agentForHyperV - Agent for Hyper-V
+      agentForOffice365 - Agent for Office 365
+      agentForOracle - Agent for Oracle
+      agentForSql - Agent for SQL
+      agentForWindows - Agent for Windows
+      commandLine - Command-Line Tool
+      mediaBuilder - Bootable Media Builder
+      trayMonitor - Cyber Protect Monitor
+      agentForEsx - Agent for VMware (Windows)
+
+Supported group values:
+      all - This group combines all components.
+      allAgents - This group combines all agents.
+
+--remove-components=<component1,component2,...,componentN>
+Components and groups of components to be uninstalled.
+Using this parameter, you can uninstall the product components only. To completely uninstall the product, go to 'Control Panel', and then select 'Programs and Features' > 'Acronis Backup' > 'Uninstall'.
+For the supported values, see the description of the '--add' parameter.
+
+Installation path
+--install-dir=<path>
+Path to a folder where the product and its components will be installed. If the folder does not exist, it will be created.
+
+Registration
+--reg-address=<url>
+management server URL.
+
+--reg-login=<login>
+Login for the management server. Do not use with '--reg-token'. Specifying this parameter makes '--registration' optional.
+
+--reg-password=<password>
+Password for the management server. Do not use with '--reg-token'. Specifying this parameter makes '--registration' optional.
+
+--reg-token=<token>
+Registration token. Do not use with '--reg-login' or '--reg-password'. Specifying this parameter makes '--registration' optional.
+
+--registration=[skip | by-credentials | by-token | device-flow]
+Type of the agent registration after the installation. To skip the registration, specify 'skip'. To register agents by credentials or a token, specify 'by-credentials' or 'by-token', and then specify appropriate parameters. To register agents by using the OAuth 2.0 protocol, specify 'device-flow' - the setup program will show the registration page after the installation completes. Do not use '--registration=device-flow' with '--quiet'.
+
+Logon account for the agent service
+--agent-account-login=<login>
+Login for the service account.
+
+--agent-account-password=<password>
+Password for the service account.
+
+--agent-account=[system | new | custom]
+Account under which the Cyber Protect Agent service will run. To use Service User Accounts, specify 'system'. To create a new account, specify 'new'. To use an existing account, specify 'custom' or omit.
+
+HTTP proxy server
+--http-proxy-address=<host>:<port>
+Name/IP and port of the custom HTTP proxy server.
+
+--http-proxy-login=<login>
+Login for the custom HTTP proxy server.
+
+--http-proxy-password=<password>
+Password for the custom HTTP proxy server.
+
+--http-proxy=[none | system | custom]
+Instructs whether to use an HTTP proxy server for backup to and recovery from the cloud storage over the Internet. If no proxy server should be used, specify 'none'. To use a system-wide proxy server, specify 'system'. To use any other proxy server, specify 'custom', and then specify its address and credentials in the appropriate parameters.
+
+vCenter/ESXi
+--esxi-address=<host>
+Host name or IP address of the vCenter Server or ESXi.
+
+--esxi-login=<login>
+Login for the vCenter Server or ESXi.
+
+--esxi-password=<password>
+Password for the vCenter Server or ESXi.
