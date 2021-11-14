@@ -20,7 +20,7 @@ Invoke-WebRequest -Uri $url -OutFile "$dir\CyberProtect_AgentForWindows_web.exe"
 
 # Build and run the command
 $command = "$dir\CyberProtect_AgentForWindows_web.exe"
-$parms = "--quiet --log-dir=$dir\AcronisInstall --add-components=agentForWindows,agentForAmp --registration=by-token --reg-token=$token --reg-address=$baseUrl"
+$parms = "--quiet --log-dir=$dir\AcronisInstall --registration=by-token --reg-token=$token --reg-address=$baseUrl"
 $Prms = $Parms.Split( )
 & "$command" $Prms
 
