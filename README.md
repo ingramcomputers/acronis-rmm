@@ -5,6 +5,8 @@ This script will download the Cyber Protect installer from a URL and install. It
 
 I could not figure out a way to download the agent directly from Acronis. But I did not spend much time on it.
 
+If you do not want the tray icon, you need to specify the components during install. I could not find a way to brand the icon. It doesn't do much anyway. (--add-components=agentForWindows,agentForAmp)
+
 4 things to edit
 
 $token : You will need to generate a token for the client. Read the token section in this guide: https://www.acronis.com/en-us/support/documentation/CyberProtectionService/#deploying-agents-through-group-policy.html
