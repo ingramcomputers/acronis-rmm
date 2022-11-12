@@ -1,0 +1,9 @@
+# Unregister Agent
+cd "%ProgramFiles%\BackupClient\RegisterAgentTool"
+register_agent.exe -o unregister 
+
+
+
+# Register Agent
+cd "%ProgramFiles%\BackupClient\RegisterAgentTool"
+register_agent.exe -o register -t cloud -a https://us5-cloud.acronis.com -u username -p password
